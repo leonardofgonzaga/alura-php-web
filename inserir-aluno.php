@@ -9,7 +9,7 @@ $pdo = new PDO('sqlite:' . $databasePath);
 
 $student = new Student(
     null, 
-    "Leonardo', ''); DROP TABLE students; -- Gonzaga", 
+    "Teste", 
     new DateTimeImmutable('1995-03-03')
 );
 
