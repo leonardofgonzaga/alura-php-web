@@ -20,7 +20,7 @@ foreach ($studentDataList as $studentData) {
     $studenList[] = new Student(
         $studentData['id'],
         $studentData['name'],
-        new DateTimeImmutable($studentData['birth_Date'])
+        new DateTimeImmutable($studentData['birth_date'])
     );
 }
 
