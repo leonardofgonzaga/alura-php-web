@@ -10,7 +10,7 @@ use Alura\Pdo\Infrastructure\Persistence\ConnectionCreator;
 use DateTimeImmutable;
 use PDOStatement;
 
-class PdoStudentRepository extends StudentRepository
+class PdoStudentRepository implements StudentRepository
 {
     private PDO $connection;
 
