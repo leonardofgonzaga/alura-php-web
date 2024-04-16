@@ -9,6 +9,7 @@ use Alura\Pdo\Domain\Repository\StudentRepository;
 use Alura\Pdo\Infrastructure\Persistence\ConnectionCreator;
 use DateTimeImmutable;
 use PDOStatement;
+use RuntimeException;
 
 class PdoStudentRepository implements StudentRepository
 {
@@ -68,6 +69,9 @@ class PdoStudentRepository implements StudentRepository
     {
         $query = 'INSERT INTO students (name, birth_date) VALUES (:name, :birth_date)';
         $stmt = $this->connection->prepare($query);
+        if ($stmt === false) {
+            throw new RuntimeException('Erro na query do banco');
+        }
 
         $success = $stmt->execute([
             ':name' => $student->name(),
